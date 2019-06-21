@@ -694,8 +694,14 @@ Resources:
               Value: !Ref EnvironmentName
             - Name: DATABASE_ENDPOINT
               Value: !If [ IsDbStackSet, "Fn::ImportValue": !Sub "${DatabaseStackName}-DatabaseURL", "" ]
+            - Name: DATABASE_PORT
+              Value: !If [ IsDbStackSet, "Fn::ImportValue": !Sub "${DatabaseStackName}-DatabasePort", "3306" ]
+            - Name: DATABASE_NAME
+              Value: !If [ IsDbStackSet, "Fn::ImportValue": !Sub "${DatabaseStackName}-DatabaseName", "" ]
             - Name: DATABASE_USER
               Value: !If [ IsDbStackSet, "Fn::ImportValue": !Sub "${DatabaseStackName}-DatabaseUser", "" ]
+            - Name: DATABASE_PASS
+              Value: !If [ IsDbStackSet, "Fn::ImportValue": !Sub "${DatabaseStackName}-DatabasePassword", "" ]
             - Name: LOAD_BALANCER_DNS
               Value: !If [ CreateRoute53Record, !Ref LoadBalancerDomainName, !GetAtt ApplicationLoadBalancer.DNSName ]
           LogConfiguration:
