@@ -9,7 +9,7 @@ Parameters:
 
   TemplateBucket:
     Type: String
-    Default: awslabs-startup-kit-templates-deploy-v5
+    Default: lmakarov-ecs-startup-kit-templates
     Description: The template bucket for the CloudFormation templates
 
   EnvironmentName:

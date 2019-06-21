@@ -695,7 +695,7 @@ Resources:
             - Name: DATABASE_ENDPOINT
               Value: !If [ IsDbStackSet, "Fn::ImportValue": !Sub "${DatabaseStackName}-DatabaseURL", "" ]
             - Name: DATABASE_PORT
-              Value: !If [ IsDbStackSet, "Fn::ImportValue": !Sub "${DatabaseStackName}-DatabasePort", "3306" ]
+              Value: 3306
             - Name: DATABASE_NAME
               Value: !If [ IsDbStackSet, "Fn::ImportValue": !Sub "${DatabaseStackName}-DatabaseName", "" ]
             - Name: DATABASE_USER
