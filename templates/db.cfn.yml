@@ -363,6 +363,12 @@ Outputs:
     Export:
       Name: !Sub ${AWS::StackName}-DatabaseURL
 
+  DbName:
+    Description: RDS Database default database name
+    Value: !Ref DatabaseName
+    Export:
+      Name: !Sub ${AWS::StackName}-DatabaseName
+
   DbUser:
     Description: RDS Database admin account user
     Value: !Ref DatabaseUser
