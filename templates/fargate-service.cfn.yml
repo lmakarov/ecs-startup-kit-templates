@@ -799,7 +799,7 @@ Resources:
         Fn::ImportValue: !Sub ${NetworkStackName}-AppIngressPort
       Protocol: !Ref AppProtocol
       Matcher:
-        HttpCode: 200
+        HttpCode: 200,302
       HealthCheckIntervalSeconds: 10
       HealthCheckPath: !Ref HealthCheckPath
       HealthCheckProtocol: !Ref AppProtocol
